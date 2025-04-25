@@ -8,9 +8,16 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(Brand::all());
+        $countryCode = $request->header('CF-IPCountry', 'default');
+
+        $brands = Brand::where('country_code', $countryCode)
+            ->orWhere('country_code', 'default')
+            ->orderBy('rating', 'desc')
+            ->get();
+
+        return response()->json($brands);
     }
 
     public function store(Request $request)

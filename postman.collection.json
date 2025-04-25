@@ -1,0 +1,117 @@
+{
+    "info": {
+      "name": "TheBrandList API",
+      "description": "Collection : CRUD operations of TheBrandList API with CF-IPCountry geolocation filtering",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Brands",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/brands",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "brands"]
+          }
+        }
+      },
+      {
+        "name": "Get Brands by Country (CF-IPCountry: FR)",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "CF-IPCountry",
+              "value": "FR"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/api/brands",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "brands"]
+          }
+        }
+      },
+      {
+        "name": "Create a New Brand",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"brand_name\": \"New Casino\",\n  \"brand_image\": \"https://example.com/image.png\",\n  \"rating\": 4,\n  \"country_code\": \"US\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/brands",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "brands"]
+          }
+        }
+      },
+      {
+        "name": "Get Brand by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/brands/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "brands", "1"]
+          }
+        }
+      },
+      {
+        "name": "Update Brand by ID",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"brand_name\": \"Updated Casino\",\n  \"brand_image\": \"https://example.com/updated-image.png\",\n  \"rating\": 5,\n  \"country_code\": \"CA\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/brands/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "brands", "1"]
+          }
+        }
+      },
+      {
+        "name": "Delete Brand by ID",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/brands/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "brands", "1"]
+          }
+        }
+      }
+    ]
+  }
+  

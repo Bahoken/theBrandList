@@ -18,8 +18,8 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
       - DB_DATABASE=brandlist
-      - DB_USERNAME=root
-      - DB_PASSWORD=
+      - DB_USERNAME=yves
+      - DB_PASSWORD=root
     command: php artisan serve --host=0.0.0.0 --port=8000
 
   frontend:
@@ -35,10 +35,10 @@ services:
     ports:
       - "3307:3306" # host:container
     environment:
-      MYSQL_DATABASE: toplist
-      MYSQL_USER: root
-      MYSQL_PASSWORD:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: brandlist
+      MYSQL_USER: yves
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
     volumes:
       - mysql_data:/var/lib/mysql
 

@@ -85,6 +85,20 @@ docker-compose up --build
 
 ---
 
+### 🔥 Important: Manual Migration Required
+
+After starting the containers, **you must run the database migrations manually**:
+
+```bash
+docker compose exec backend php artisan migrate --seed
+```
+
+✅ This will create the database tables and seed the initial data.
+
+✅ Must be done **only once** when launching the project the first time.
+
+---
+
 ## 📄 API Endpoints (Examples)
 
 | Method | URL | Description |

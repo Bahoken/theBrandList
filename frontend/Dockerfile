@@ -10,6 +10,6 @@ COPY . .
 
 RUN npm run build
 
-RUN npm install -g serve
+RUN npm install --legacy-peer-deps -g serve
 
 CMD ["serve", "-s", "build", "-l", "3000"]
